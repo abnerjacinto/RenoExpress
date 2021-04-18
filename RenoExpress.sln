@@ -11,25 +11,29 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Purchasing", "Purchasing", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Stock", "Stock", "{2E91CE17-E07F-4B49-8D9D-8ECABE665C46}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RenoExpress.Gateway.Api", "Gateway\RenoExpress.Gateway.Api\RenoExpress.Gateway.Api.csproj", "{A3441A98-5471-4A0B-9E1B-A3A6EA2CA50A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RenoExpress.Gateway.Api", "Gateway\RenoExpress.Gateway.Api\RenoExpress.Gateway.Api.csproj", "{A3441A98-5471-4A0B-9E1B-A3A6EA2CA50A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RenoExpress.Purchansing.Core", "Purchasing\RenoExpress.Purchansing.Core\RenoExpress.Purchansing.Core.csproj", "{68FC569D-5935-48D5-8590-D6736CECA6DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RenoExpress.Purchasing.Core", "Purchasing\RenoExpress.Purchansing.Core\RenoExpress.Purchasing.Core.csproj", "{68FC569D-5935-48D5-8590-D6736CECA6DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RenoExpress.Purchasing.Infrastructure", "Purchasing\RenoExpress.Purchasing.Infrastructure\RenoExpress.Purchasing.Infrastructure.csproj", "{83E28631-F702-418B-B5FE-AB866C6C303C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RenoExpress.Purchasing.Infrastructure", "Purchasing\RenoExpress.Purchasing.Infrastructure\RenoExpress.Purchasing.Infrastructure.csproj", "{83E28631-F702-418B-B5FE-AB866C6C303C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RenoExpress.Purchansing.Api", "Purchasing\RenoExpress.Purchansing.Api\RenoExpress.Purchansing.Api.csproj", "{804A12B7-4740-46AB-9880-C7DF646CA65C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RenoExpress.Purchasing.Api", "Purchasing\RenoExpress.Purchansing.Api\RenoExpress.Purchasing.Api.csproj", "{804A12B7-4740-46AB-9880-C7DF646CA65C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RenoExpress.Sales.Core", "Sales\RenoExpress.Sales.Core\RenoExpress.Sales.Core.csproj", "{CD5E214D-84FE-4719-8982-D4D085069DD8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RenoExpress.Sales.Core", "Sales\RenoExpress.Sales.Core\RenoExpress.Sales.Core.csproj", "{CD5E214D-84FE-4719-8982-D4D085069DD8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RenoExpress.Sales.Infrastructure", "Sales\RenoExpress.Sales.Infrastructure\RenoExpress.Sales.Infrastructure.csproj", "{3D9F31C5-FA45-4070-9EA2-5758E997A9D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RenoExpress.Sales.Infrastructure", "Sales\RenoExpress.Sales.Infrastructure\RenoExpress.Sales.Infrastructure.csproj", "{3D9F31C5-FA45-4070-9EA2-5758E997A9D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RenoExpress.Sales.Api", "Sales\RenoExpress.Sales.Api\RenoExpress.Sales.Api.csproj", "{94770DD5-6CC2-480E-9209-6F4425C19A16}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RenoExpress.Sales.Api", "Sales\RenoExpress.Sales.Api\RenoExpress.Sales.Api.csproj", "{94770DD5-6CC2-480E-9209-6F4425C19A16}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RenoExpress.Stock.Core", "Stock\RenoExpress.Stock.Core\RenoExpress.Stock.Core.csproj", "{B209CA6D-CA91-49FB-87E4-669C7704C3EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RenoExpress.Stock.Core", "Stock\RenoExpress.Stock.Core\RenoExpress.Stock.Core.csproj", "{B209CA6D-CA91-49FB-87E4-669C7704C3EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RenoExpress.Stock.Infrastructure", "Stock\RenoExpress.Stock.Infrastructure\RenoExpress.Stock.Infrastructure.csproj", "{223B50DE-2981-42D9-953F-BA6D1696A201}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RenoExpress.Stock.Infrastructure", "Stock\RenoExpress.Stock.Infrastructure\RenoExpress.Stock.Infrastructure.csproj", "{223B50DE-2981-42D9-953F-BA6D1696A201}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RenoExpress.Stock.Api", "Stock\RenoExpress.Stock.Api\RenoExpress.Stock.Api.csproj", "{00B842BE-B910-4B23-AF8B-1800BDED0A3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RenoExpress.Stock.Api", "Stock\RenoExpress.Stock.Api\RenoExpress.Stock.Api.csproj", "{00B842BE-B910-4B23-AF8B-1800BDED0A3C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{12F5E84F-8913-423B-B854-854854407E82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RenoExpress.Common", "Common\RenoExpress.Common\RenoExpress.Common.csproj", "{5FBC8640-2D23-4CAE-AFF1-75BD9F3B2E84}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,6 +81,10 @@ Global
 		{00B842BE-B910-4B23-AF8B-1800BDED0A3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00B842BE-B910-4B23-AF8B-1800BDED0A3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00B842BE-B910-4B23-AF8B-1800BDED0A3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FBC8640-2D23-4CAE-AFF1-75BD9F3B2E84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FBC8640-2D23-4CAE-AFF1-75BD9F3B2E84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FBC8640-2D23-4CAE-AFF1-75BD9F3B2E84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FBC8640-2D23-4CAE-AFF1-75BD9F3B2E84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -92,6 +100,7 @@ Global
 		{B209CA6D-CA91-49FB-87E4-669C7704C3EB} = {2E91CE17-E07F-4B49-8D9D-8ECABE665C46}
 		{223B50DE-2981-42D9-953F-BA6D1696A201} = {2E91CE17-E07F-4B49-8D9D-8ECABE665C46}
 		{00B842BE-B910-4B23-AF8B-1800BDED0A3C} = {2E91CE17-E07F-4B49-8D9D-8ECABE665C46}
+		{5FBC8640-2D23-4CAE-AFF1-75BD9F3B2E84} = {12F5E84F-8913-423B-B854-854854407E82}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {29B3B870-0A45-4DD6-9C67-F5D4D4FE9D44}
