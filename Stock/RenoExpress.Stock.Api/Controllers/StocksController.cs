@@ -1,15 +1,11 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RenoExpress.Common.Response;
 using RenoExpress.Stock.Core.DTOs;
 using RenoExpress.Stock.Core.Entities;
 using RenoExpress.Stock.Core.Exceptions;
 using RenoExpress.Stock.Core.Interfaces.IServices;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 
@@ -44,20 +40,36 @@ namespace RenoExpress.Stock.Api.Controllers
             var stock = await _stockService.GetProductStockAsync(productId,stockDto.BranchId);
             if (stock != null)
             {
-                stock.Quantity = stockDto.Quantity;
-                await _stockService.UpdateProductStockAsync(stock);
-                stockDto = _mapper.Map<StockDTO>(stock);
+                if (stockDto.Increase)
+                    stock.Quantity=IncreaseStock(stock.Quantity,stockDto.Quantity);
+                else
+                {
+                    if(stockDto.Quantity>stock.Quantity)
+                        throw new BusinessException($"Error, product id: {stockDto.ProductId} not available, items available {stock.Quantity}");
+                    stock.Quantity = decreaseStock(stock.Quantity, stockDto.Quantity);
+                }
+                await _stockService.UpdateProductStockAsync(stock);              
                 
             }
             else
             {
                 stock = _mapper.Map<ProductStock>(stockDto);
-                await _stockService.InsertProductStockAsync(stock);
-                stockDto = _mapper.Map<StockDTO>(stock);
-            }           
-            
+                await _stockService.InsertProductStockAsync(stock);                
+            }
+            stockDto = _mapper.Map<StockDTO>(stock);
             var response = new ApiResponse<StockDTO>(stockDto);
             return Ok(response);
+        }
+
+
+        private int IncreaseStock(int productQuantity, int productStock)
+        {
+           return productStock + productQuantity;    
+           
+        }
+        private int decreaseStock(int productQuantity, int productStock)
+        {
+            return productStock - productQuantity;
         }
         #endregion
     }

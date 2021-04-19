@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace RenoExpress.Purchasing.Infrastructure.Migrations
 {
-    public partial class initial : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -38,10 +38,10 @@ namespace RenoExpress.Purchasing.Infrastructure.Migrations
                 columns: table => new
                 {
                     ID = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    PurchaseId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     ProductID = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Price = table.Column<double>(type: "float", nullable: false),
                     Quantity = table.Column<int>(type: "int", nullable: false),
-                    PurchaseID = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     CreatedTime = table.Column<double>(type: "float", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     ModifiedTime = table.Column<double>(type: "float", nullable: true),
@@ -54,8 +54,8 @@ namespace RenoExpress.Purchasing.Infrastructure.Migrations
                 {
                     table.PrimaryKey("PK_PurchaseDetails", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_PurchaseDetails_Purchases_PurchaseID",
-                        column: x => x.PurchaseID,
+                        name: "FK_PurchaseDetails_Purchases_PurchaseId",
+                        column: x => x.PurchaseId,
                         principalSchema: "Purchasing",
                         principalTable: "Purchases",
                         principalColumn: "ID",
@@ -63,10 +63,10 @@ namespace RenoExpress.Purchasing.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_PurchaseDetails_PurchaseID",
+                name: "IX_PurchaseDetails_PurchaseId",
                 schema: "Purchasing",
                 table: "PurchaseDetails",
-                column: "PurchaseID");
+                column: "PurchaseId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

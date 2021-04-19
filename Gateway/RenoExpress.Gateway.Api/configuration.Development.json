@@ -1,0 +1,47 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 4001
+        }
+      ],
+      "UpstreamPathTemplate": "/purchasing/v1/{everything}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ]      
+    },
+    {
+      "DownstreamPathTemplate": "/api/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 4002
+        }
+      ],
+      "UpstreamPathTemplate": "/sales/v1/{everything}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ]    
+
+    },
+    {
+      "DownstreamPathTemplate": "/api/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 4003
+        }
+      ],
+      "UpstreamPathTemplate": "/stock/v1/{everything}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ]    
+
+    }
+    
+  ],  
+  "GlobalConfiguration": {
+    
+  }
+
+}

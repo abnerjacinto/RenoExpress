@@ -13,7 +13,7 @@ namespace RenoExpress.Purchasing.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PurchansingDetailsController : ControllerBase
+    public class PurchasingDetailsController : ControllerBase
     {
         #region Attributes
         private readonly IPurchaseDetailService _purchaseDetailService;
@@ -21,7 +21,7 @@ namespace RenoExpress.Purchasing.Api.Controllers
         #endregion
 
         #region Constructor
-        public PurchansingDetailsController(
+        public PurchasingDetailsController(
                 IPurchaseDetailService purchaseDetailService,
                 IMapper mapper
             )

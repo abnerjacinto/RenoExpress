@@ -3,26 +3,24 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using RenoExpress.Purchasing.Infrastructure.Data;
+using RenoExpress.Sales.Infrastructure.Data;
 
-namespace RenoExpress.Purchasing.Infrastructure.Migrations
+namespace RenoExpress.Sales.Infrastructure.Migrations
 {
     [DbContext(typeof(DBContext))]
-    [Migration("20210418193941_initial")]
-    partial class initial
+    partial class DBContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasDefaultSchema("Purchasing")
+                .HasDefaultSchema("Sales")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.5")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("RenoExpress.Purchasing.Core.Entities.Purchase", b =>
+            modelBuilder.Entity("RenoExpress.Sales.Core.Entities.Sale", b =>
                 {
                     b.Property<string>("ID")
                         .HasColumnType("nvarchar(450)");
@@ -37,6 +35,9 @@ namespace RenoExpress.Purchasing.Infrastructure.Migrations
                         .HasColumnType("float");
 
                     b.Property<string>("CreatedUserId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CustomerId")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Document")
@@ -54,15 +55,12 @@ namespace RenoExpress.Purchasing.Infrastructure.Migrations
                     b.Property<string>("ModifiedUserId")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("SupplierID")
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("ID");
 
-                    b.ToTable("Purchases");
+                    b.ToTable("Sales");
                 });
 
-            modelBuilder.Entity("RenoExpress.Purchasing.Core.Entities.PurchaseDetail", b =>
+            modelBuilder.Entity("RenoExpress.Sales.Core.Entities.SaleDetail", b =>
                 {
                     b.Property<string>("ID")
                         .HasColumnType("nvarchar(450)");
@@ -94,31 +92,31 @@ namespace RenoExpress.Purchasing.Infrastructure.Migrations
                     b.Property<string>("ProductID")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PurchaseID")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
+                    b.Property<string>("SaleId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("ID");
 
-                    b.HasIndex("PurchaseID");
+                    b.HasIndex("SaleId");
 
-                    b.ToTable("PurchaseDetails");
+                    b.ToTable("SaleDetails");
                 });
 
-            modelBuilder.Entity("RenoExpress.Purchasing.Core.Entities.PurchaseDetail", b =>
+            modelBuilder.Entity("RenoExpress.Sales.Core.Entities.SaleDetail", b =>
                 {
-                    b.HasOne("RenoExpress.Purchasing.Core.Entities.Purchase", "Purchase")
-                        .WithMany("PurchaseDetails")
-                        .HasForeignKey("PurchaseID");
+                    b.HasOne("RenoExpress.Sales.Core.Entities.Sale", "Sale")
+                        .WithMany("SaleDetails")
+                        .HasForeignKey("SaleId");
 
-                    b.Navigation("Purchase");
+                    b.Navigation("Sale");
                 });
 
-            modelBuilder.Entity("RenoExpress.Purchasing.Core.Entities.Purchase", b =>
+            modelBuilder.Entity("RenoExpress.Sales.Core.Entities.Sale", b =>
                 {
-                    b.Navigation("PurchaseDetails");
+                    b.Navigation("SaleDetails");
                 });
 #pragma warning restore 612, 618
         }
