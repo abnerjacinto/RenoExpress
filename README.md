@@ -2,6 +2,22 @@
 
 _Proyecto realizado con tecnología .Net core 5 Arquitectura microservicios a nivel general, a nivel proyectos se ha implementado arquitectura Clean Code_
 
+_Para objetos de transferencia se utilizo Automapper_
+
+![Autommaper](src/img/automapper.png "Automapper")
+
+_Como ORM se utilizo EntityFramework Core_
+
+![Entity Framework](src/img/entity.jpg "Entity FrameWork")
+
+_Para el manejo de seguridad se emplea la herramienta de Json Web Token (JWT)_
+
+![JWT](src/img/jwt.png "JWT")
+
+_Para este ejercicio se desarrollo este modelo de ER, como se trabajo con Code first de entity framework, la base de datos se genera con código_
+
+![JWT](src/img/er.png "JWT") er.png
+
 ## Arquitectura Microservicios 
 
 _Arquitectura que se base en fragmentar en pequeños servicios y que cada servicios realice una unica tarea, el siguiente diagrama muestra la arquitectura a nivel general de todo el sistema._
