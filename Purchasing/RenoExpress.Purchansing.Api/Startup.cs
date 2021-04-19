@@ -7,10 +7,12 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using RenoExpress.Purchasing.Core.Interfaces.IAgents;
 using RenoExpress.Purchasing.Core.Options;
 using RenoExpress.Purchasing.Infrastructure.Data;
 using RenoExpress.Purchasing.Infrastructure.Extensions;
 using RenoExpress.Purchasing.Infrastructure.Filters;
+using RenoExpress.Purchasing.Infrastructure.Repositories.Agents;
 using System;
 using System.IO;
 using System.Reflection;
@@ -36,6 +38,7 @@ namespace RenoExpress.Purchansing.Api
                 options.Filters.Add<GlobalExceptionFilter>();
             });
 
+            services.AddHttpClient<IStockAgent, StockAgent>();
             //Extension Services Infra
             services.AddServices();
 

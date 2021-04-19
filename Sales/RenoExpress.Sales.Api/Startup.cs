@@ -7,10 +7,12 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using RenoExpress.Sales.Core.Interfaces.IAgents;
 using RenoExpress.Sales.Core.Options;
 using RenoExpress.Sales.Infrastructure.Data;
 using RenoExpress.Sales.Infrastructure.Extensions;
 using RenoExpress.Sales.Infrastructure.Filters;
+using RenoExpress.Sales.Infrastructure.Repositories.Agents;
 using System;
 using System.IO;
 using System.Reflection;
@@ -35,6 +37,8 @@ namespace RenoExpress.Sales.Api
 
             //Extension Services Infra
             services.AddServices();
+
+            services.AddHttpClient<IStockAgent, StockAgent>();
 
             //Service DBContext
             services.AddDbContext<DBContext>(options =>

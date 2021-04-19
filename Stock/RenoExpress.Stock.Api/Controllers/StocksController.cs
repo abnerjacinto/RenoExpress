@@ -46,9 +46,9 @@ namespace RenoExpress.Stock.Api.Controllers
                 {
                     if(stockDto.Quantity>stock.Quantity)
                         throw new BusinessException($"Error, product id: {stockDto.ProductId} not available, items available {stock.Quantity}");
-                    stock.Quantity = decreaseStock(stock.Quantity, stockDto.Quantity);
+                    stock.Quantity = decreaseStock(stockDto.Quantity, stock.Quantity);
                 }
-                await _stockService.UpdateProductStockAsync(stock);              
+                await _stockService.UpdateProductStockAsync(stock);      
                 
             }
             else
