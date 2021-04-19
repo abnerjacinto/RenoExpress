@@ -1,6 +1,6 @@
 ﻿namespace RenoExpress.Stock.Core.Entities
 {
-    public class Stock : BaseEntity
+    public class ProductStock : BaseEntity
     {
         #region Properties
         public string ProductId { get; set; }
