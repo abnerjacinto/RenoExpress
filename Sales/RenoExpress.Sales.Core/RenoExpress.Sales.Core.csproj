@@ -4,13 +4,4 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="DTOs\" />
-    <Folder Include="Exceptions\" />
-    <Folder Include="Interfaces\" />
-    <Folder Include="QueryFilters\" />
-    <Folder Include="Services\" />
-    <Folder Include="Options\" />
-  </ItemGroup>
-
 </Project>

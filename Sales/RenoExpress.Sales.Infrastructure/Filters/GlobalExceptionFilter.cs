@@ -1,10 +1,10 @@
 ﻿using System.Net;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc.Filters;
-using RenoExpress.Purchasing.Core.Exceptions;
+using RenoExpress.Sales.Core.Exceptions;
 using Microsoft.AspNetCore.Mvc;
 
-namespace RenoExpress.Purchasing.Infrastructure.Filters
+namespace RenoExpress.Sales.Infrastructure.Filters
 {
     public class GlobalExceptionFilter : IExceptionFilter
   {    

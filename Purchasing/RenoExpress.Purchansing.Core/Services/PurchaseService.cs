@@ -12,14 +12,18 @@ namespace RenoExpress.Purchasing.Core.Services
     public class PurchaseService : IPurchaseService
     {
         #region Attributes
-        private readonly IUnitOfWork _unitOfWork;
+        private readonly IUnitOfWork _unitOfWork;        
         private readonly IPurchaseDetailService _purchaseDetailService;
         #endregion
 
         #region Constructor
-        public PurchaseService(IUnitOfWork unitOfWork)
+        public PurchaseService(
+            IUnitOfWork unitOfWork,
+            IPurchaseDetailService purchaseService
+            )
         {
             _unitOfWork = unitOfWork;
+            _purchaseDetailService = purchaseService;
         }
         #endregion
 
@@ -64,9 +68,9 @@ namespace RenoExpress.Purchasing.Core.Services
         }
 
         private async Task ExpiredPurchaseDetail(string purchaseId)
-        {   // TODO: Crear un metodo en el repositorio.
+        {   // TODO: Crear un metodo en el repositorio Get.
             var items = await _purchaseDetailService.GetPurchaseDetailsAsync();
-            var purchaseItem = items.Where(x => x.ProductID == purchaseId);
+            var purchaseItem = items.Where(x => x.PurchaseId == purchaseId);
             if (purchaseItem != null)
             {
                 foreach(var detail in purchaseItem)

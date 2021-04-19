@@ -6,10 +6,14 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using RenoExpress.Purchasing.Core.Options;
 using RenoExpress.Purchasing.Infrastructure.Data;
+using RenoExpress.Purchasing.Infrastructure.Extensions;
 using RenoExpress.Purchasing.Infrastructure.Filters;
 using System;
+using System.IO;
+using System.Reflection;
 using System.Text;
 
 namespace RenoExpress.Purchansing.Api
@@ -31,6 +35,10 @@ namespace RenoExpress.Purchansing.Api
             {
                 options.Filters.Add<GlobalExceptionFilter>();
             });
+
+            //Extension Services Infra
+            services.AddServices();
+
             //Service DBContext
             services.AddDbContext<DBContext>(options =>
                 options.UseSqlServer(_configuration.GetConnectionString("RenoExpress"),
@@ -62,6 +70,39 @@ namespace RenoExpress.Purchansing.Api
 
             // Service Automapper
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+            // Register the Swagger generator, defining 1 or more Swagger documents
+            services.AddSwaggerGen(x => {
+                // Set the comments path for the Swagger JSON and UI.
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                x.IncludeXmlComments(xmlPath);
+
+                //authorize
+                x.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                {
+                    Description = "JWT Authorization header using the Bearer scheme (Example: 'Bearer 12345abcdef')",
+                    Name = "Authorization",
+                    In = ParameterLocation.Header,
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer"
+                });
+
+                x.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+                        },
+                        Array.Empty<string>()
+                    }
+                });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -76,6 +117,16 @@ namespace RenoExpress.Purchansing.Api
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            // Enable middleware to serve generated Swagger as a JSON endpoint.
+            app.UseSwagger();
+
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Reno Express Purchasing API V1");
+            });
 
             app.UseEndpoints(endpoints =>
             {
