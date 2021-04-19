@@ -1,22 +1,22 @@
 # Reno Express
 
-_Proyecto realizado con tecnología .Net core 5 Arquitectura microservicios a nivel general, a nivel proyectos se ha implementado arquitectura Clean Code_
-
+_Proyecto realizado con tecnología .Net core 5 Arquitectura microservicios a nivel general, a nivel proyectos se ha implementado arquitectura Clean Code._
+------------------------------
 _Para objetos de transferencia se utilizo Automapper_
 
 ![Autommaper](src/img/automapper.png "Automapper")
-
+------------------------------
 _Como ORM se utilizo EntityFramework Core_
 
 ![Entity Framework](src/img/entity.jpg "Entity FrameWork")
-
+------------------------------
 _Para el manejo de seguridad se emplea la herramienta de Json Web Token (JWT)_
 
 ![JWT](src/img/jwt.png "JWT")
-
+------------------------------
 _Para este ejercicio se desarrollo este modelo de ER, como se trabajo con Code first de entity framework, la base de datos se genera con código_
 
-![JWT](src/img/er.png "JWT") er.png
+![ER](src/img/er.png "ER")
 
 ## Arquitectura Microservicios 
 
