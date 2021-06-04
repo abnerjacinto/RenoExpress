@@ -16,5 +16,6 @@ namespace RenoExpress.Purchasing.Core.Interfaces.IServices
         Task<bool> UpdatePurchaseAsync(Purchase purchase);
 
         Task<bool> DeletePurchaseAsync(string id);
+        
     }
 }

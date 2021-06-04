@@ -33,7 +33,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RenoExpress.Stock.Api", "St
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{12F5E84F-8913-423B-B854-854854407E82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RenoExpress.Common", "Common\RenoExpress.Common\RenoExpress.Common.csproj", "{5FBC8640-2D23-4CAE-AFF1-75BD9F3B2E84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RenoExpress.Common", "Common\RenoExpress.Common\RenoExpress.Common.csproj", "{5FBC8640-2D23-4CAE-AFF1-75BD9F3B2E84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RenoExpress.Purchasing.UnitTest", "RenoExpress.Purchasing.UnitTest\RenoExpress.Purchasing.UnitTest.csproj", "{09CF455B-0C00-4D1A-84A7-7F8EB8667DB6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -85,6 +87,10 @@ Global
 		{5FBC8640-2D23-4CAE-AFF1-75BD9F3B2E84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5FBC8640-2D23-4CAE-AFF1-75BD9F3B2E84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5FBC8640-2D23-4CAE-AFF1-75BD9F3B2E84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09CF455B-0C00-4D1A-84A7-7F8EB8667DB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09CF455B-0C00-4D1A-84A7-7F8EB8667DB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09CF455B-0C00-4D1A-84A7-7F8EB8667DB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09CF455B-0C00-4D1A-84A7-7F8EB8667DB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -101,6 +107,7 @@ Global
 		{223B50DE-2981-42D9-953F-BA6D1696A201} = {2E91CE17-E07F-4B49-8D9D-8ECABE665C46}
 		{00B842BE-B910-4B23-AF8B-1800BDED0A3C} = {2E91CE17-E07F-4B49-8D9D-8ECABE665C46}
 		{5FBC8640-2D23-4CAE-AFF1-75BD9F3B2E84} = {12F5E84F-8913-423B-B854-854854407E82}
+		{09CF455B-0C00-4D1A-84A7-7F8EB8667DB6} = {26A5B4AE-4AC3-40E9-82A5-F1283A03E8D8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {29B3B870-0A45-4DD6-9C67-F5D4D4FE9D44}
